@@ -32,6 +32,14 @@ namespace BooleanLogicParser
                 var c = (char) _reader.Peek();
                 switch (c)
                 {
+                    case '&':
+                        tokens.Add(new AndToken());
+                        _reader.Read();
+                        break;
+                    case '|':
+                        tokens.Add(new OrToken());
+                        _reader.Read();
+                        break;
                     case '!':
                         tokens.Add(new NegationToken());
                         _reader.Read();
