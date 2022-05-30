@@ -8,9 +8,11 @@ namespace BooleanLogicParser.Tests
     public class TokenizerTests
     {
         [TestCase("And", ExpectedResult = typeof(AndToken))]
+        [TestCase("&", ExpectedResult = typeof(AndToken))]
         [TestCase("and", ExpectedResult = typeof(AndToken))]
         [TestCase("Or", ExpectedResult = typeof(OrToken))]
         [TestCase("or", ExpectedResult = typeof(OrToken))]
+        [TestCase("|", ExpectedResult = typeof(OrToken))]
         [TestCase("True", ExpectedResult = typeof(TrueToken))]
         [TestCase("False", ExpectedResult = typeof(FalseToken))]
         [TestCase("!", ExpectedResult = typeof(NegationToken))]
